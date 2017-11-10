@@ -1,11 +1,11 @@
 @all
-Feature: login
+Feature: ATL基本功能点验证
 
 Background:
 	Given 打开主页。
 
 @loginSuccess
-Scenario Outline: ABO user login success
+Scenario Outline: ABO用户正常登陆
     And ABO用户登录. userId="<userId>" password="<password>"
     Then 验证成功登录后，页面头部显示用户名称。userName="<userName>"
     Examples:
@@ -13,7 +13,7 @@ Scenario Outline: ABO user login success
     |2234518		|123456		|TestUser		|
 
 @loginFail
-Scenario Outline: ABO user login success
+Scenario Outline: 过期不足3个月ABO用户登录
     And ABO用户登录. userId="<userId>" password="<password>"
     Then 验证过期用户登录后，页面头部显示续约提示信息。
     Examples:
@@ -21,7 +21,7 @@ Scenario Outline: ABO user login success
     |1234513		|123456		|
 
 @basefunction
-Scenario Outline: ABO user login success
+Scenario Outline: 基本功能验证
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId>"
     And 调整产品数量，然后加入购物车。 productNum="<productNum>"
@@ -39,8 +39,8 @@ Scenario Outline: ABO user login success
     |userId			|password	|productId	|productNum	|ticket1value	|ticket2value	|ticket3value	|
     |2234518		|123456		|2056		|2			|1				|1				|1				|
 
-@removeAll@remove
-Scenario Outline: ABO user login success
+@removeAll
+Scenario Outline: 购物车页面全部删除
     And ABO用户登录. userId="<userId>" password="<password>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId1>"
     And 调整产品数量，然后加入购物车。 productNum="<productNum>"
@@ -55,8 +55,8 @@ Scenario Outline: ABO user login success
     |userId			|password	|productId1	|productNum	|productId2	|
     |2234518		|123456		|2056		|2			|3059		|
 
-@removeBatch@remove
-Scenario Outline: ABO user login success
+@removeBatch
+Scenario Outline: 购物车页面批量删除
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId1>"
     And 调整产品数量，然后加入购物车。 productNum="<productNum>"
@@ -73,8 +73,8 @@ Scenario Outline: ABO user login success
     |userId			|password	|productId1	|productNum	|productId2	|productId3	|
     |2234518		|123456		|2056		|2			|3059		|3310		|
 
-@removeOne@remove
-Scenario Outline: ABO user login success
+@removeOne
+Scenario Outline: 购物车页面单个删除
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId1>"
     And 调整产品数量，然后加入购物车。 productNum="<productNum>"
@@ -92,7 +92,7 @@ Scenario Outline: ABO user login success
     |2234518		|123456		|2056		|2			|3059		|3310		|
 
 @promotion
-Scenario Outline: ABO user login success
+Scenario Outline: 特惠活动
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 点击mini购物车图标，进入购物车页面。
     And 点击購物專區，选择特惠活動。
@@ -104,7 +104,7 @@ Scenario Outline: ABO user login success
     |2234518		|123456		|10016			|14			|2			|9			|
 
 @changeLocation
-Scenario Outline: ABO user login success
+Scenario Outline: 更改送货方式
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 更换送货地点。 newLocation="<newLocation>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId>"
@@ -122,8 +122,8 @@ Scenario Outline: ABO user login success
     |userId			|password	|productId	|productNum	|ticket1value	|ticket2value	|ticket3value	|newLocation	|
     |2234518		|123456		|2056		|2			|1				|1				|1				|IEC體驗店1		|
 
-@Eticket@menuUI
-Scenario Outline: ABO user login success
+@Eticket
+Scenario Outline:优惠券使用验证
     And ABO用户登录（空购物车）. userId="<userId>" password="<password>"
     And 搜索一个产品，然后点击进入产品详情页. productId="<productId>"
     And 调整产品数量，然后加入购物车。 productNum="<productNum>"
@@ -140,7 +140,7 @@ Scenario Outline: ABO user login success
     |2234518		|123456		|2056		|2			|1				|1				|1				|
 
 @menuUI
-Scenario Outline: ABO user login success
+Scenario Outline: 一二级菜单UI验证
     Then 验证header部的一二级菜单是否和主页左侧一二级菜单保持一致。
     Examples:
     ||

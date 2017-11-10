@@ -13,8 +13,8 @@ public class Configurations {
 
 	private static void readProperty() {
 
-		System.setProperty("webdriver.chrome.driver",
-				"D:/develop/eclipse_accl/git_code/AcclAuto/AcclAutoAction/src/test/resources/selenium_standalone_binaries/windows/googlechrome/64bit/chromedriver.exe");
+//		System.setProperty("webdriver.chrome.driver",
+//				"D:/develop/eclipse_accl/git_code/AcclAuto/AcclAutoAction/src/test/resources/selenium_standalone_binaries/windows/googlechrome/64bit/chromedriver.exe");
 //		System.setProperty("webdriver.chrome.driver",
 //				"D:/driver/chrome/231/chromedriver.exe");
 //		System.setProperty("webdriver.gecko.driver",
