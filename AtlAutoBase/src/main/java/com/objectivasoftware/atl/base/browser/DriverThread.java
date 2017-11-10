@@ -16,7 +16,7 @@ import java.util.concurrent.TimeUnit;
 public class DriverThread {
     private static Logger LOGGER = Logger.getLogger(DriverThread.class);
 
-    private MyDriver Browser;
+    private static MyDriver driver;
     private DriverType selectedBrowserType;
 
     private final DriverType defaultBrowserType = DriverTypeImpl.FIREFOX;
@@ -26,7 +26,7 @@ public class DriverThread {
     private final boolean useRemoteBrowser = Constants.SELENIUM_MODE_LOCAL.equals(Configurations.getConfiguration(Constants.SELENIUM_MODE)) ? false : true;
 
     public MyDriver getDriver() {
-        if (null == Browser) {
+        if (null == driver) {
             selectedBrowserType = determineEffectiveBrowserType();
             DesiredCapabilities desiredCapabilities = selectedBrowserType.getDesiredCapabilities();
             try {
@@ -39,12 +39,12 @@ public class DriverThread {
 			} 
         }
 
-        return Browser;
+        return driver;
     }
 
     public void quitBrowser() {
-        if (null != Browser) {
-            Browser.quit();
+        if (null != driver) {
+            driver.quit();
         }
     }
 
@@ -79,10 +79,10 @@ public class DriverThread {
                 desiredCapabilities.setVersion(desiredBrowserVersion);
             }
 
-            Browser = new MyDriver(new RemoteWebDriver(seleniumGridURL, desiredCapabilities));
+            driver = new MyDriver(new RemoteWebDriver(seleniumGridURL, desiredCapabilities));
         } else {
-            Browser = selectedBrowserType.getBrowserObject(desiredCapabilities);
+            driver = selectedBrowserType.getBrowserObject(desiredCapabilities);
         }
-        Browser.manage().timeouts().pageLoadTimeout(Long.parseLong(Configurations.getConfiguration(Constants.SELENIUM_WAITTIME)) * 2, TimeUnit.MILLISECONDS);
+        driver.manage().timeouts().pageLoadTimeout(Long.parseLong(Configurations.getConfiguration(Constants.SELENIUM_WAITTIME)) * 2, TimeUnit.MILLISECONDS);
     }
 }

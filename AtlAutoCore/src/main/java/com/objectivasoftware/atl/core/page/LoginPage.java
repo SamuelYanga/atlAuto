@@ -21,7 +21,7 @@ public class LoginPage extends BasePage {
 	private WebElement loginButton;
 	
 	public void login(String userName, String password) {
-		WaitUtil.waitOn(myDriver).untilElementToBeClickable(usernameInput);
+		WaitUtil.waitOn(myDriver, WaitUtil.WAIT_TIME_LEVEL2).untilElementToBeClickable(usernameInput);
 		usernameInput.clear();
 		usernameInput.sendKeys(userName);
 		passwordInput.clear();

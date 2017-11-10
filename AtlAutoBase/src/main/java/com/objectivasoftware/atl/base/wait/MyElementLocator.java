@@ -50,7 +50,7 @@ public class MyElementLocator implements ElementLocator {
       return cachedElement;
     }
 
-    WebElement element = WaitUtil.waitOn(this.searchContext).untilAdded(by);
+    WebElement element = WaitUtil.waitOn(this.searchContext, WaitUtil.WAIT_TIME_LEVEL2).untilAdded(by);
     if (LOGGER.isDebugEnabled()) {
       LOGGER.debug("element has been waitted");
     }

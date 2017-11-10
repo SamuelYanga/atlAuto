@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         format = { "pretty","html:cucumber-html-reports",
                 "json:cucumber-html-reports/cucumber.json",
                 "junit:cucumber-html-reports/cucumber.xml"},
-        tags = {"@loginSuccess"},
+        tags = {"@menuUI"},
         monochrome = true,
         dryRun = false,
         glue = "com.objectivasoftware.atl.action"

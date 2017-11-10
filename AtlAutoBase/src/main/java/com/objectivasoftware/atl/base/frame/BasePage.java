@@ -16,6 +16,10 @@ import org.openqa.selenium.interactions.Actions;
 import com.objectivasoftware.atl.base.wait.WaitUtil;
 
 public abstract class BasePage extends AbstractFrame {
+	
+	
+	public static String LOADING = ".ajax-loading";
+	
 
 	public static String handle;
 
@@ -53,9 +57,14 @@ public abstract class BasePage extends AbstractFrame {
 	public void windowScrollToBottom() {
 		int webPageViewHeight0 = getWebPageViewHeight();
 		windowScrollToTop(webPageViewHeight0);
+	}
+
+	public void windowScrollToBottoms() {
+		int webPageViewHeight0 = getWebPageViewHeight();
+		windowScrollToTop(webPageViewHeight0);
 		int webPageViewHeight1 = getWebPageViewHeight();
 		if (webPageViewHeight0 != webPageViewHeight1) {
-			windowScrollToBottom();
+			windowScrollToBottoms();
 		} else {
 			return;
 		}
@@ -69,7 +78,6 @@ public abstract class BasePage extends AbstractFrame {
 	}
 
 	public void scrollMoveToElement(WebElement we) {
-		scrollToTop();
 		int y = we.getLocation().getY();
 		String script = "return screen.availHeight;";
 		Object obj = myDriver.executeScript(script);
@@ -87,8 +95,8 @@ public abstract class BasePage extends AbstractFrame {
 	}
 
 	public void windowScrollToTop(int move) {
-		inJectJquery(myDriver);
-		String setscroll = "$(window).scrollTop(" + move + ");";
+//		inJectJquery(myDriver);
+		String setscroll = "window.scrollTo(0," + move + ")";
 		myDriver.executeScript(setscroll);
 		WaitUtil.waitOn(myDriver).waitTime(300);
 	}

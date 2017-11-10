@@ -26,7 +26,7 @@ public class AbstractFrame {
 	}
 
 	private void waitPageLoadIdentifier() {
-		WaitUtil.waitOn(myDriver).untilPageDown();
+		WaitUtil.waitOn(myDriver, WaitUtil.WAIT_TIME_LEVEL5).untilPageDown();
 		List<String> pageIdentitfierList = getLoadIdentifier();
 		for (String pageIdentitfier : pageIdentitfierList) {
 			WaitUtil.waitOn(this.myDriver).untilAdded(By.id(pageIdentitfier));

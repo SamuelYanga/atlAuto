@@ -47,6 +47,7 @@ public class Hooks {
 
 	@After(order = 9000)
 	public void clearCookies(Scenario scenario) {
+		BaseParam.mapParam.clear();
 //		DriverFactory.clearCookies();
 	}
 
