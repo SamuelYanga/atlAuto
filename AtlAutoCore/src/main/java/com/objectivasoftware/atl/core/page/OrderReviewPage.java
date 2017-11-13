@@ -4,16 +4,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
 import com.objectivasoftware.atl.base.frame.BasePage;
 import com.objectivasoftware.atl.base.wait.WaitUtil;
-import com.objectivasoftware.atl.base.wait.WaitUtil.UntilEvent;
 import com.objectivasoftware.atl.core.vo.ProductInfo;
-import com.objectivasoftware.atl.core.vo.ProductTotalInfo;
 
 public class OrderReviewPage extends BasePage {
 

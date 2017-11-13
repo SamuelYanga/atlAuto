@@ -1,16 +1,6 @@
 package com.objectivasoftware.atl.action.checkout;
 
-import static org.hamcrest.Matchers.*;
-
-import java.math.BigDecimal;
-import java.util.List;
-
-import org.junit.Assert;
-
-import com.objectivasoftware.atl.core.page.CartPage;
 import com.objectivasoftware.atl.core.page.CheckoutPage;
-import com.objectivasoftware.atl.core.vo.ProductInfo;
-import com.objectivasoftware.atl.core.vo.ProductTotalInfo;
 
 import cucumber.api.java.en.And;
 

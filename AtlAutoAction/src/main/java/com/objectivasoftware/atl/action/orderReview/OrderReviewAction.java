@@ -8,12 +8,9 @@ import java.util.List;
 import org.junit.Assert;
 
 import com.objectivasoftware.atl.action.BaseParam;
-import com.objectivasoftware.atl.core.page.CartPage;
-import com.objectivasoftware.atl.core.page.CheckoutPage;
 import com.objectivasoftware.atl.core.page.OrderConfirmationPage;
 import com.objectivasoftware.atl.core.page.OrderReviewPage;
 import com.objectivasoftware.atl.core.vo.ProductInfo;
-import com.objectivasoftware.atl.core.vo.ProductTotalInfo;
 
 import cucumber.api.java.en.And;
 

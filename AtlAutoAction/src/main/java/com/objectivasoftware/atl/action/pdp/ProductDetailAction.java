@@ -1,7 +1,5 @@
 package com.objectivasoftware.atl.action.pdp;
 
-import static org.hamcrest.Matchers.*;
-
 import java.util.ArrayList;
 import java.util.List;
 

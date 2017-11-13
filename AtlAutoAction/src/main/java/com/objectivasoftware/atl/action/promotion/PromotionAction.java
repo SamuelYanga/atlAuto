@@ -1,17 +1,11 @@
 package com.objectivasoftware.atl.action.promotion;
 
-import static org.hamcrest.Matchers.*;
-
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 import org.junit.Assert;
 
-import com.objectivasoftware.atl.action.BaseParam;
-import com.objectivasoftware.atl.core.page.ProductDetailPage;
-import com.objectivasoftware.atl.core.page.PromotionListPage;
 import com.objectivasoftware.atl.core.page.PromotionPage;
 import com.objectivasoftware.atl.core.vo.ProductInfo;
 

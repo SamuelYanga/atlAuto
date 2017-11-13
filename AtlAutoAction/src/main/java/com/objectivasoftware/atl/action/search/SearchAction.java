@@ -1,7 +1,5 @@
 package com.objectivasoftware.atl.action.search;
 
-import static org.hamcrest.Matchers.*;
-
 import com.objectivasoftware.atl.core.component.HeaderComponent;
 import com.objectivasoftware.atl.core.page.SearchPage;
 

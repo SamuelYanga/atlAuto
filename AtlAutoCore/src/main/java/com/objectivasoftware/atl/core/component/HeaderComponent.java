@@ -23,8 +23,6 @@ import com.objectivasoftware.atl.core.util.Location;
 
 public class HeaderComponent extends BaseComponent {
 
-
-
 	public static final String REMOVE_CONFIRM_BUTTON_CSS = ".alt-popup.show .submit-button-wrapper .atl-btn";
 	@FindBy(css = REMOVE_CONFIRM_BUTTON_CSS)
 	private WebElement removeConfirmBtn;
@@ -52,9 +50,7 @@ public class HeaderComponent extends BaseComponent {
 		} catch (TimeoutException e) {
 			
 		}
-		
-		
-		
+
 		if (cleanCartFlag) {
 			if (!isCartNull()) {
 				cleanCart();
@@ -94,7 +90,6 @@ public class HeaderComponent extends BaseComponent {
 	@FindBy(css = LOGOUT_LINK_CSS)
 	private WebElement logoutLink;
 
-	
 	public static final String USER_DETAIL_CSS = ".user-detail .login-true";
 	@FindBy(css = USER_DETAIL_CSS)
 	private WebElement userDetailLink;
@@ -118,16 +113,10 @@ public class HeaderComponent extends BaseComponent {
 
 	}
 
-	
-	
-	
-	
-	//plp-search
 	public static final String PLP_SEARCH_INPUT_ID = "plp-search";
 	@FindBy(id = PLP_SEARCH_INPUT_ID)
 	private WebElement searchInput;
 
-	//plp-search
 	public static final String PLP_SEARCH_ICON_CLASS = "search-icon";
 	@FindBy(className = PLP_SEARCH_ICON_CLASS)
 	private WebElement searchButton;
@@ -143,11 +132,7 @@ public class HeaderComponent extends BaseComponent {
 		WaitUtil.waitOn(myDriver).untilPageDown();
 
 	}
-	
-	
-	
-	
-	//minicart-detail
+
 	public static final String MINICART_LINK_CSS = "minicart-detail";
 	@FindBy(className = MINICART_LINK_CSS)
 	private WebElement miniCartLink;
@@ -157,9 +142,7 @@ public class HeaderComponent extends BaseComponent {
 		WaitUtil.waitOn(myDriver).untilElementToBeClickable(miniCartLink);
 		miniCartLink.click();
 	}
-	
-	
-	//cart-num
+
 	public static final String MINICART_NUM_CSS = ".cart-num";
 	@FindBy(css = MINICART_NUM_CSS)
 	private WebElement miniCartNum;
@@ -174,16 +157,7 @@ public class HeaderComponent extends BaseComponent {
 		CartPage cartPage = new CartPage();
 		cartPage.removeAll();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 	/**
 	 * ********************************promotion***********************************
 	 */
@@ -198,12 +172,10 @@ public class HeaderComponent extends BaseComponent {
 	
 	public void openSecondMenu(FirstMenu first) {
 		WebElement firstMenu = firstMenus.get(first.getNum());
-		String temp = firstMenu.getText();
 		WaitUtil.waitOn(myDriver).untilElementToBeClickable(firstMenu);
 		WaitUtil.waitOn(myDriver).waitTime(WaitUtil.WAIT_TIME_LEVEL0);
 		firstMenu.click();
-		//.subnavi-none
-		
+
 		WaitUtil.waitOn(myDriver, WaitUtil.WAIT_TIME_LEVEL3, new UntilEvent() {
 			@Override
 			public boolean excute() {
@@ -213,8 +185,7 @@ public class HeaderComponent extends BaseComponent {
 			}
 		}).untilEventHappened();
 	}
-	
-	//navi-block-0
+
 	public static final String SECOND_MENU_PROMOTION_CSS = ".navi-block-0 a[href*=promotionlisting]";
 	@FindBy(css = SECOND_MENU_PROMOTION_CSS)
 	private WebElement promotionListingLink;

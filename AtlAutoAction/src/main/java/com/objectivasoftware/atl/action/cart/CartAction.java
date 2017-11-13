@@ -3,13 +3,11 @@ package com.objectivasoftware.atl.action.cart;
 import static org.hamcrest.Matchers.*;
 
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.List;
 
 import org.junit.Assert;
 
 import com.objectivasoftware.atl.action.BaseParam;
-import com.objectivasoftware.atl.action.pdp.ProductDetailAction;
 import com.objectivasoftware.atl.core.page.CartPage;
 import com.objectivasoftware.atl.core.vo.ProductInfo;
 import com.objectivasoftware.atl.core.vo.ProductTotalInfo;
