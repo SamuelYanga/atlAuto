@@ -60,6 +60,7 @@ public enum DriverTypeImpl implements DriverType {
 
 			ChromeOptions op = new ChromeOptions();
 			op.addArguments("--lang=zh-CN");
+			op.addArguments("--start-maximized");
 			capabilities.setCapability("chromeOptions", op);
 
 			return capabilities;
