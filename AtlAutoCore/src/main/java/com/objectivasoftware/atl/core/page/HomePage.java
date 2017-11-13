@@ -25,7 +25,7 @@ public class HomePage extends BasePage {
 		browser.get(Configurations.getConfiguration(Constants.SELENIUM_TARGETURL));
 		browser.skipSSLValidation();
 		// browser.switchToAlert();
-		browser.manage().window().maximize();
+//		browser.manage().window().maximize();
 
 		return new HomePage();
 	}
